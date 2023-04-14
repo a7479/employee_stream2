@@ -13,30 +13,30 @@ import java.util.List;
 @RequestMapping("/departmens")
 public class DepartmentController {
 
-        public final DepartmentService departmentService;
+    public final DepartmentService departmentService;
 
-        public DepartmentController(DepartmentService departmentService) {
-            this.departmentService = departmentService;
-        }
-
-
-        @GetMapping(path = "/max-salary")
-        public Employee calculateMaxSalary(@RequestParam Integer departmentId) {
-            return departmentService.calculateMaxSalary(departmentId);
-        }
-
-        @GetMapping(path = "/min-salary")
-        public Employee calculateMinSalary(@RequestParam Integer departmentId) {
-            return departmentService.calculateMinSalary(departmentId);
-        }
-
-        @GetMapping(path = "/all")
-        public List<Employee> allDep(@RequestParam(value = "departmentId", required = false) Integer departmentId) {
-            if (departmentId == null) {
-                return departmentService.all();
-            }
-            return departmentService.allDep(departmentId);
-
-        }
+    public DepartmentController(DepartmentService departmentService) {
+        this.departmentService = departmentService;
     }
+
+
+    @GetMapping(path = "/max-salary")
+    public Employee calculateMaxSalary(@RequestParam Integer departmentId) {
+        return departmentService.calculateMaxSalary(departmentId);
+    }
+
+    @GetMapping(path = "/min-salary")
+    public Employee calculateMinSalary(@RequestParam Integer departmentId) {
+        return departmentService.calculateMinSalary(departmentId);
+    }
+
+    @GetMapping(path = "/all")
+    public List<Employee> allDep(@RequestParam(value = "departmentId", required = false) Integer departmentId) {
+        if (departmentId == null) {
+            return departmentService.all();
+        }
+        return departmentService.allDep(departmentId);
+
+    }
+}
 

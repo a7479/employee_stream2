@@ -19,7 +19,7 @@ public class EmployeeService {
 
     public Employee addEmployee(String firstName, String lastName, Integer departmentId, Double salary) {
 
-        Employee temp = new Employee(firstName, lastName, departmentId,salary);
+        Employee temp = new Employee(firstName, lastName, departmentId, salary);
         if (staff.contains(temp)) {
             throw new EmployeeAlreadyAddedException();
         }
@@ -31,7 +31,7 @@ public class EmployeeService {
     }
 
     public Employee removeEmployee(String firstName, String lastName, Integer departmentId, Double salary) {
-        Employee temp = new Employee(firstName, lastName, departmentId,salary);
+        Employee temp = new Employee(firstName, lastName, departmentId, salary);
         if (staff.contains(temp)) {
             staff.remove(temp);
             return temp;
@@ -43,7 +43,7 @@ public class EmployeeService {
     }
 
     public Employee findEmployee(String firstName, String lastName, Integer departmentId, Double salary) {
-        Employee temp = new Employee(firstName, lastName, departmentId,salary);
+        Employee temp = new Employee(firstName, lastName, departmentId, salary);
         if (staff.contains(temp)) {
             return temp;
         }
