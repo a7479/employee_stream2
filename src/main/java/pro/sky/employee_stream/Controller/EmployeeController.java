@@ -15,7 +15,7 @@ import java.util.Collection;
 @RequestMapping("/employee")
 public class EmployeeController {
 
-    public final EmployeeService employeeService;
+    private final EmployeeService employeeService;
 
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;

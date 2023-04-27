@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/departmens")
 public class DepartmentController {
 
-    public final DepartmentService departmentService;
+    private final DepartmentService departmentService;
 
     public DepartmentController(DepartmentService departmentService) {
         this.departmentService = departmentService;

@@ -1,5 +1,8 @@
 package pro.sky.employee_stream;
 
+import org.apache.commons.lang3.StringUtils;
+import pro.sky.employee_stream.Exception.EmployeeAlreadyAddedException;
+
 import java.util.Objects;
 
 public class Employee {
@@ -9,9 +12,10 @@ public class Employee {
     private Integer departmentId;
     private Double salary;
 
-    public Employee(String firstName, String lastName,Integer departmentId,Double salary) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Employee(String firstName, String lastName, Integer departmentId, Double salary) {
+
+        this.firstName = StringUtils.capitalize(firstName.toLowerCase());
+        this.lastName = StringUtils.capitalize(lastName.toLowerCase());
         this.departmentId = departmentId;
         this.salary = salary;
     }

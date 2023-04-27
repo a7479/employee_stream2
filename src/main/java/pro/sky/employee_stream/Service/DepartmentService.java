@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 @Service
 public class DepartmentService {
 
-    public final EmployeeService employeeService;
+    private final EmployeeService employeeService;
 
     private final List<Employee> staff = new ArrayList<>();
 
